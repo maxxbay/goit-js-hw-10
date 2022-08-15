@@ -24,24 +24,22 @@ const searchCountry = event => {
   }
   fetchCountries(findCountry)
     .then(country => {
+      clearContent();
+
       if (country.length > 10) {
         Notiflix.Notify.info(
           'Too many matches found. Please enter a more specific name.'
         );
-        clearContent();
         return;
       } else if (country.length === 1) {
-        clearContent(countryList.innerHTML);
         renderCountryInfo(country);
       } else if (country.length > 1 && country.length <= 10) {
-        clearContent(countryInfo.innerHTML);
         renderCountryList(country);
       }
     })
     .catch(error => {
       Notiflix.Notify.failure('Oops, there is no country with that name');
       clearContent();
-      return error;
     });
 };
 
