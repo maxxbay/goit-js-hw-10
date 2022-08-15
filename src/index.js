@@ -45,7 +45,7 @@ const searchCountry = event => {
     });
 };
 
-//==========ПОКАЗ ОДНОЇ КРАЇНИ=========================
+//==========ПОКАЗ ОДНОЇ АБО ДЕКІЛЬКОХ КРАЇН В ПОШУКУ=========================
 
 const renderCountryList = country => {
   const markup = country
@@ -66,7 +66,7 @@ const renderCountryInfo = country => {
       }" width="100" height="60"> ${name.official}</h1>
       <p><span>Capital: </span> ${capital}</p>
       <p><span>Population:</span> ${population}</p>
-      <p><span>Languages:</span> ${Object.values(languages)}</p><section>`;
+      <p><span>Languages:</span> ${Object.values(languages)} </p><section>`;
     })
     .join('');
   countryInfo.innerHTML = markup;
